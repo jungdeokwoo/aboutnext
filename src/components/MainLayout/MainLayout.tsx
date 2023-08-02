@@ -9,6 +9,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/">Main</Link>
         <Link href="/about">About</Link>
         <Link href="/dashboard">Dashboard</Link>
+        <Link href="/post">Post</Link>
+        <Link href="/product">Product</Link>
       </header>
       {children}
     </>
