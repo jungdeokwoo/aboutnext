@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <p>메인페이지</p>
+        <header>메인페이지 이랍쇼</header>
       </div>
     </main>
   );
