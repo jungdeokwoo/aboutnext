@@ -8,7 +8,7 @@ export default function Default() {
 
   useEffect(() => {
     router.replace("/about");
-  }, []);
+  }, [router]);
 
   return <div>loading</div>;
 }

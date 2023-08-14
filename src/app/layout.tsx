@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Next 연구소",
-  description: "next13 이것저것 해보기",
+  description: "next13기능들 이것저것 건들여보기",
 };
 
 export default function RootLayout({
