@@ -15,7 +15,6 @@ export default function Home() {
   };
 
   return (
-<<<<<<< HEAD
     <main className={S.main}>
       <div className={S.mainCtnts}>
         <p>app 라우트 메인페이지 &#34;src/app/page.tsx&#34;</p>
@@ -34,11 +33,6 @@ export default function Home() {
             );
           })}
         </div>
-=======
-    <main className={styles.main}>
-      <div>
-        <header>메인페이지 이랍쇼</header>
->>>>>>> 8a29ff87ecb45996821cd2262be09c785db7cbde
       </div>
     </main>
   );
