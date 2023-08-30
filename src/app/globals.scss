@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+  word-break: keep-all;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+}
