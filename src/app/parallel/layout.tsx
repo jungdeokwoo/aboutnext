@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import S from "./style.module.scss";
-import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function Layout({
   item2,
@@ -15,8 +14,10 @@ export default function Layout({
   Modal: React.ReactNode;
   children: React.ReactNode;
 }) {
-  const pathValue = useMemo(() => {
-    return localStorage.getItem("path");
+  const [pathValue, setPathValue] = useState<string | null>("");
+
+  useEffect(() => {
+    localStorage.getItem("path") && setPathValue(localStorage.getItem("path"));
   }, []);
 
   return (

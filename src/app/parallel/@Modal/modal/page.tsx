@@ -1,13 +1,12 @@
 "use client";
 
-import { useParams, usePathname, useRouter } from "next/navigation";
 import React from "react";
 import style from "./style.module.scss";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function Modal() {
+export default function ModalRouting() {
   const router = useRouter();
   const path = usePathname();
-  const params = useParams();
 
   return (
     <div className={style.background}>
