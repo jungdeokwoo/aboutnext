@@ -1,0 +1,35 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px gray;
+
+  > p:first-child {
+    padding-bottom: 10px;
+    border-bottom: 3px solid;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        width: 30px;
+        height: 20px;
+        background-color: gray;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

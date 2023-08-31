@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  gap: 15px;
+
+  ul:first-child {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: azure;
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  li {
+    font-size: 1.1rem;
+    text-indent: 10px;
+  }
+}
+
+.subMenu {
+  background-color: bisque;
+  font-size: 24px;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
