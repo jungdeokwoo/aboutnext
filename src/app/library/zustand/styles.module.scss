@@ -1,0 +1,33 @@
+.zustandDsc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+  border-bottom: 2px solid black;
+
+  .strong {
+    font-weight: bolder;
+  }
+}
+
+.zustandExp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  gap: 20px;
+
+  > p.title {
+    font-size: 1.3rem;
+  }
+}
+
+.boxWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 40px;
+  border-bottom: 4px solid grey;
+  border-radius: 2px;
+}

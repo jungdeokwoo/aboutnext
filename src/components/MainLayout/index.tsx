@@ -15,6 +15,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/basicRouting">BasicRouting</Link>
         <Link href="/parallel">Parallel</Link>
         <Link href="/dashboard">Dashboard</Link>
+        <Link href="/library">Library</Link>
         <Link href="/product">Product</Link>
       </header>
       <div className={S.routeNm}>
