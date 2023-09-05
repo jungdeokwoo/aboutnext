@@ -21,7 +21,7 @@ const ClientRender = () => {
   return (
     <div className={S.csrCnt}>
       {userInfo.map((user: UserInfoProps) => (
-        <UserCard key={user.id} userInfo={user} />
+        <UserCard key={user.id} userInfo={user} rendering="csr" set="1" />
       ))}
     </div>
   );
