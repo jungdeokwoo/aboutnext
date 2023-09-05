@@ -1,0 +1,19 @@
+.compareWrp {
+  padding: 20px;
+
+  section {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    gap: 20px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: aquamarine;
+  font-size: 20px;
+  border-radius: 10px;
+}

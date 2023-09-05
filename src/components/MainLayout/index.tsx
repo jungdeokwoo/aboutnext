@@ -14,7 +14,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/">Main</Link>
         <Link href="/basicRouting">BasicRouting</Link>
         <Link href="/parallel">Parallel</Link>
-        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/compare">CSR/SSR</Link>
         <Link href="/library">Library</Link>
         <Link href="/product">Product</Link>
       </header>

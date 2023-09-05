@@ -1,0 +1,26 @@
+.cardWrp {
+  display: flex;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  p {
+    font-size: 22px;
+
+    &:first-child {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    &:nth-child(2) {
+      font-style: italic;
+    }
+  }
+}

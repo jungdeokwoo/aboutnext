@@ -1,0 +1,18 @@
+.csr {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  border: 2px solid #8ceb5f;
+  border-radius: 5px;
+
+  header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #8ceb5f;
+  }
+}
