@@ -3,6 +3,12 @@ import Box1 from "@/components/Zustand/Box1/page";
 import Box2 from "@/components/Zustand/Box2/page";
 import Box3 from "@/components/Zustand/Box3/page";
 import Box4 from "@/components/Zustand/Box4/page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Zustand관련",
+  description: "Zustand 전역변수관리 라이브러리",
+};
 
 const Zustand = () => {
   return (
