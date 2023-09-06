@@ -1,19 +1,28 @@
 .cardWrp {
-  display: flex;
+  display: inline-flex;
   padding: 10px;
   border: 1px solid;
   border-radius: 10px;
   gap: 10px;
+
+  img {
+    flex-shrink: 0 0 180px;
+  }
 }
 
 .detailInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1 1 auto;
+  width: 150px;
   gap: 10px;
 
-  p {
+  span {
     font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &:first-child {
       font-weight: 700;

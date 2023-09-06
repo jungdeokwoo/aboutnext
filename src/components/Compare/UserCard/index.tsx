@@ -22,10 +22,10 @@ const UserCard = ({
         priority={true}
       />
       <div className={S.detailInfo}>
-        <p>{userInfo.name}</p>
-        <p>{userInfo.username}</p>
-        <p>{userInfo.email}</p>
-        <p>rendering : {rendering}</p>
+        <span>{userInfo.name}</span>
+        <span>{userInfo.username}</span>
+        <span>{userInfo.email}</span>
+        <span>rendering : {rendering}</span>
       </div>
     </div>
   );

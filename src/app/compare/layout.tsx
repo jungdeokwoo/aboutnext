@@ -1,5 +1,11 @@
 import React from "react";
 import S from "./style.module.scss";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CSR/SSR 페이지 비교",
+  description: "CSR과 SSR의 페이지 특성비교",
+};
 
 export default function layout({
   children,
