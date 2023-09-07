@@ -11,7 +11,7 @@ const getUserList = async () => {
 const SSR = async () => {
   const userList = await getUserList();
 
-  return <ServerRender userList={userList} path="compare" />;
+  return <ServerRender userList={userList} path="ssr" />;
 };
 
 export default SSR;
