@@ -2,18 +2,21 @@ import React from "react";
 import Image from "next/image";
 import S from "./styles.module.scss";
 import { UserInfoProps } from "@/types/Compare/type";
+import Link from "next/link";
 
 const UserCard = ({
   userInfo,
   rendering,
   set,
+  path,
 }: {
   userInfo: UserInfoProps;
   rendering: string;
   set: string;
+  path: string;
 }) => {
   return (
-    <div className={S.cardWrp}>
+    <Link href={`/${path}/${userInfo.id}`} className={S.cardWrp}>
       <Image
         src={`https://robohash.org/${userInfo.id}?set=set${set}`}
         width={180}
@@ -26,8 +29,9 @@ const UserCard = ({
         <span>{userInfo.username}</span>
         <span>{userInfo.email}</span>
         <span>rendering : {rendering}</span>
+        <span>NO : {userInfo.id}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

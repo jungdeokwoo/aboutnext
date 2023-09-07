@@ -1,8 +1,8 @@
 import React from "react";
 import ClientRender from "@/components/Compare/ClientRender";
 
-const page = () => {
-  return <ClientRender path="compare" />;
+const CSR = () => {
+  return <ClientRender path="csr" />;
 };
 
-export default page;
+export default CSR;
