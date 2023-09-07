@@ -1,4 +1,5 @@
 import React from "react";
+import S from "./styles.module.scss";
 import ServerRender from "@/components/Compare/ServerRender";
 import { UserInfoProps } from "@/types/Compare/type";
 
@@ -11,7 +12,12 @@ const getUserList = async () => {
 const SSR = async () => {
   const userList = await getUserList();
 
-  return <ServerRender userList={userList} path="compare" />;
+  return (
+    <div className={S.ssr}>
+      <header>SSR 페이지</header>
+      <ServerRender userList={userList} path="ssr" />
+    </div>
+  );
 };
 
 export default SSR;
