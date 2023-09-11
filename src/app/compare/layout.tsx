@@ -11,10 +11,12 @@ export default function layout({
   children,
   csr,
   ssr,
+  modal,
 }: {
   children: React.ReactNode;
   ssr: React.ReactNode;
   csr: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <div className={S.compareWrp}>
@@ -37,6 +39,7 @@ export default function layout({
       <section>
         {csr}
         {ssr}
+        {modal}
       </section>
     </div>
   );

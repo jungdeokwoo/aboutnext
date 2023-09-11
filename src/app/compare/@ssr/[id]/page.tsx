@@ -1,4 +1,5 @@
 import UserCard from "@/components/Compare/UserCard";
+import S from "../styles.module.scss";
 import { UserInfoProps } from "@/types/Compare/type";
 import React from "react";
 
@@ -28,7 +29,10 @@ const UserInfoDtlSSR = async ({
   const userData = await getUser(id);
 
   return (
-    <UserCard userInfo={userData} rendering="SSR" set="2" path="compare" />
+    <div className={S.ssr}>
+      <header>SSR 페이지</header>
+      <UserCard userInfo={userData} rendering="SSR" set="2" path="ssr" />;
+    </div>
   );
 };
 
