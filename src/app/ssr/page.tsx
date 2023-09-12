@@ -1,6 +1,7 @@
 import React from "react";
 import ServerRender from "@/components/Compare/ServerRender";
 import { UserInfoProps } from "@/types/Compare/type";
+import { connectDB } from "@/lib/MongoDb/dbConnect";
 
 const getUserList = async () => {
   const userList = await fetch("https://jsonplaceholder.typicode.com/users");
