@@ -5,10 +5,6 @@ import React from "react";
 export async function generateStaticParams() {
   const userList = await fetch(`https://jsonplaceholder.typicode.com/users`);
   const lists: UserInfoProps[] = await userList.json();
-  console.log(
-    lists.map((user: UserInfoProps) => ({ id: String(user.id) })),
-    "??"
-  );
   return lists.map((user: UserInfoProps) => ({ id: String(user.id) }));
 }
 

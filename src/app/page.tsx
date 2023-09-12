@@ -2,6 +2,7 @@
 
 import React from "react";
 import S from "./page.module.scss";
+import { connectDB } from "@/lib/MongoDb/dbConnect";
 
 const PATH_VALUE = ["item", "item2", "both", "none"];
 
