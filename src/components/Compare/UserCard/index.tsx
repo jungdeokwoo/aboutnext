@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import S from "./styles.module.scss";
-import { UserInfoProps } from "@/types/Compare/type";
+import { MongoUserInfoProps, UserInfoProps } from "@/types/Compare/type";
 import Link from "next/link";
 
 const UserCard = ({
@@ -10,7 +10,7 @@ const UserCard = ({
   set,
   path,
 }: {
-  userInfo: UserInfoProps;
+  userInfo: UserInfoProps | MongoUserInfoProps;
   rendering: string;
   set: string;
   path: string;
