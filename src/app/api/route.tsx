@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { connectDB } from "@/lib/MongoDb/dbConnect";
 
 export async function GET(req: NextRequest) {
-  const result = { value: "main" };
+  const client = await connectDB;
+  const db = client.db("test");
+  const result = await db.collection("nextApi").find().toArray();
 
   return NextResponse.json(result);
 }
