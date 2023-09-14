@@ -2,7 +2,7 @@
 
 ### Next.js 13 연습 및 실습
 
-[https://master.db90qyblvadrz.amplifyapp.com/](https://master.db90qyblvadrz.amplifyapp.com/) 에서 각 내용들을 확인하실 수 있습니다.
+[https://master.d3e4wjmlcb24cr.amplifyapp.com/](https://master.d3e4wjmlcb24cr.amplifyapp.com/) 에서 각 내용들을 확인하실 수 있습니다.
 
 ## 작성된 내용
 
