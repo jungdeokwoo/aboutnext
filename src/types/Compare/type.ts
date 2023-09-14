@@ -1,9 +1,12 @@
-export interface UserInfoProps {
+export interface MongoUserInfoProps {
   id: number;
   name: string;
   username: string;
   email: string;
-  address: {
+}
+
+export interface UserInfoProps extends MongoUserInfoProps {
+  address?: {
     street: string;
     suite: string;
     city: string;
@@ -13,9 +16,9 @@ export interface UserInfoProps {
       lng: string;
     };
   };
-  phone: string;
-  website: string;
-  company: {
+  phone?: string;
+  website?: string;
+  company?: {
     name: string;
     catchPhrase: string;
     bs: string;

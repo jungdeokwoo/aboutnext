@@ -16,7 +16,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <Link href="/parallel">Parallel</Link>
         <Link href="/compare">CSR/SSR</Link>
         <Link href="/library">Library</Link>
-        <Link href="/product">Product</Link>
+        <Link href="/board">Board</Link>
       </header>
       <div className={S.routeNm}>
         <p>
