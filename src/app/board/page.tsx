@@ -5,6 +5,7 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import UserCard from "@/components/Compare/UserCard";
 
 const getBoardList = async () => {
+  console.log(process.env.BASE_URL, "<<URL");
   const response = await fetch(`${process.env.BASE_URL}/api`, {
     cache: "no-cache",
     next: { tags: ["boardList"] },
@@ -18,6 +19,7 @@ export default async function Board() {
 
   const deleteHandler = async (formData: FormData) => {
     "use server";
+    console.log(process.env.BASE_URL, "<<URL");
     const response = await fetch(`${process.env.BASE_URL}/api`, {
       method: "DELETE",
       body: JSON.stringify({ _id: formData.get("listId") }),
