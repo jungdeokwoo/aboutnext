@@ -1,11 +1,8 @@
 import { connectDB } from "@/lib/MongoDb/dbConnect";
 import { ObjectId } from "mongodb";
-import { revalidateTag } from "next/cache";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const tag = req.nextUrl.searchParams.get("tag") || "";
-  revalidateTag(tag);
   const client = await connectDB;
   const db = client.db("test");
   const result = await db.collection("nextApi").find().toArray();
@@ -18,6 +15,8 @@ export async function POST(request: NextRequest) {
   console.log(body, "<<?");
   if (!body.name || !body.username || !body.email) {
     return NextResponse.json({ error: "data is Empty" }, { status: 500 });
+  } else if (body.length > 5) {
+    return NextResponse.json({ error: "data is too many" }, { status: 500 });
   }
   const client = await connectDB;
   const db = client.db("test");

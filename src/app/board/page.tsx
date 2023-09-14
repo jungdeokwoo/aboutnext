@@ -1,13 +1,13 @@
-import React from "react";
+import React, { startTransition } from "react";
 import S from "./styles.module.scss";
 import { ListProps } from "@/types/Board/type";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import UserCard from "@/components/Compare/UserCard";
 
 const getBoardList = async () => {
   const response = await fetch(`${process.env.BASE_URL}/api/board`, {
     cache: "no-cache",
-    next: { tags: ["list"] },
+    next: { tags: ["boardList"] },
   });
   const listData = response.json();
   return listData;
@@ -18,49 +18,57 @@ export default async function Board() {
 
   const deleteHandler = async (formData: FormData) => {
     "use server";
-    fetch(`${process.env.BASE_URL}/api/board`, {
+    const response = await fetch(`${process.env.BASE_URL}/api/board`, {
       method: "DELETE",
       body: JSON.stringify({ _id: formData.get("listId") }),
       cache: "no-cache",
-    })
-      .then(res => res.json())
-      .then(res => console.log(res, "<<<<"));
+    });
+    const result = await response.json();
+    console.log(result, "delete");
     revalidateTag("list");
   };
 
   const createHandler = async (formData: FormData) => {
     "use server";
-    fetch(`${process.env.BASE_URL}/api/board`, {
+    console.log(formData, "<????");
+    const response = await fetch(`${process.env.BASE_URL}/api/board`, {
       method: "POST",
       body: JSON.stringify({
         name: formData.get("name"),
         username: formData.get("username"),
         email: formData.get("email"),
-        age: 30,
+        length: formData.get("length"),
       }),
       cache: "no-cache",
-    })
-      .then(res => res.json())
-      .then(res => console.log(res, "<<<<"));
+    });
+    const result = await response.json();
+    console.log(result, "create");
     revalidateTag("list");
   };
 
   return (
     <>
-      <form className={S.registerBox} action={createHandler}>
+      <form name="regist" className={S.registerBox} action={createHandler}>
         <div>
-          <label htmlFor="name">이름</label>
-          <input type="text" name="name" />
+          <label htmlFor="name">
+            이름
+            <input type="text" id="name" name="name" />
+          </label>
         </div>
         <div>
-          <label htmlFor="email">ID</label>
-          <input type="text" name="username" />
+          <label htmlFor="username">
+            ID
+            <input type="text" id="username" name="username" />
+          </label>
         </div>
         <div>
-          <label htmlFor="email">이메일</label>
-          <input type="text" name="email" />
+          <label htmlFor="email">
+            이메일
+            <input type="text" id="email" name="email" />
+          </label>
         </div>
         <button type="submit">등록하기</button>
+        <input hidden name="length" value={boardList.length} />
       </form>
       <div className={S.userListWrap}>
         {boardList.map((list: ListProps, idx: number) => (
