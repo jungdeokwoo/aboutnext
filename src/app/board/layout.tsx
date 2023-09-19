@@ -1,9 +1,14 @@
 import React from "react";
 import S from "./styles.module.scss";
+import Link from "next/link";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={S.boardLayout}>
+      <div className={S.linkWrap}>
+        <Link href={"/board"}>User</Link>
+        <Link href={"/board/img"}>Img</Link>
+      </div>
       <div className={S.boardDscrpt}>
         <p>board 페이지는 ssr로 작동하고 있습니다.</p>
         <p>

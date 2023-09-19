@@ -50,24 +50,19 @@ export default async function Board() {
   return (
     <>
       <form name="regist" className={S.registerBox} action={createHandler}>
-        <div>
-          <label htmlFor="name">
-            이름
-            <input type="text" id="name" name="name" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="username">
-            ID
-            <input type="text" id="username" name="username" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
-            이메일
-            <input type="text" id="email" name="email" />
-          </label>
-        </div>
+        <label htmlFor="name">
+          <p>이름</p>
+          <input type="text" id="name" name="name" />
+        </label>
+        <label htmlFor="username">
+          <p>ID</p>
+          <input type="text" id="username" name="username" />
+        </label>
+        <label htmlFor="email">
+          <p>이메일</p>
+          <input type="text" id="email" name="email" />
+        </label>
+
         <button type="submit">등록하기</button>
         <input hidden name="length" value={boardList.length} />
       </form>
