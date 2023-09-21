@@ -38,7 +38,7 @@ export default async function Board() {
         name: formData.get("name"),
         username: formData.get("username"),
         email: formData.get("email"),
-        length: formData.get("length"),
+        length: boardList.length,
       }),
       cache: "no-cache",
     });
@@ -62,9 +62,7 @@ export default async function Board() {
           <p>이메일</p>
           <input type="text" id="email" name="email" />
         </label>
-
         <button type="submit">등록하기</button>
-        <input hidden name="length" value={boardList.length} />
       </form>
       <div className={S.userListWrap}>
         {boardList.map((list: ListProps, idx: number) => (
