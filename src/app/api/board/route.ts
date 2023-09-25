@@ -12,7 +12,6 @@ export async function GET(req: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  console.log(body, "<<?");
   if (!body.name || !body.username || !body.email) {
     return NextResponse.json({ error: "data is Empty" }, { status: 500 });
   } else if (body.length > 5) {
@@ -30,7 +29,6 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   const body = await request.json();
-  console.log(body, "?");
   const client = await connectDB;
   const db = client.db("test");
   await db.collection("nextApi").deleteOne({ _id: new ObjectId(body._id) });

@@ -4,3 +4,8 @@ export interface ListProps {
   username: string;
   email: string;
 }
+
+export interface ImgListProps {
+  _id: string;
+  url: string;
+}

@@ -7,7 +7,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <div className={S.boardLayout}>
       <div className={S.linkWrap}>
         <Link href={"/board"}>User</Link>
-        <Link href={"/board/img"}>Img</Link>
+        <Link href={"/board/img"} prefetch={false}>
+          Img
+        </Link>
       </div>
       <div className={S.boardDscrpt}>
         <p>board 페이지는 ssr로 작동하고 있습니다.</p>
