@@ -1,72 +1,25 @@
-"use client";
-
-import React, { useState } from "react";
-import { getSignedURL } from "@/utils/getSignedUrl";
+import React from "react";
 import S from "./styles.module.scss";
-import Image from "next/image";
+import ImgList from "@/components/Board/ImgList";
+import ImgUpLoad from "@/components/Board/ImgUpLoad";
+import { ImgListProps } from "@/types/Board/type";
 
-const ImgPage = () => {
-  const [imgFile, setImgFile] = useState<File[] | null>(null);
-  const [signedUrl, setSignedUrl] = useState("");
+const getImgList = async () => {
+  const response = await fetch(`${process.env.BASE_URL}/api/board/img/url`, {
+    cache: "no-cache",
+    next: { tags: ["imgList"] },
+  });
+  const imgList = await response.json();
+  return imgList;
+};
 
-  const postImg = async () => {
-    if (!imgFile) return;
-
-    try {
-      const s3Res = await fetch(signedUrl, { method: "PUT", body: imgFile[0] });
-      setImgFile(null);
-      return s3Res.ok ? alert("이미지등록성공") : alert("다시 시도해주세요");
-    } catch {
-      alert("이미지 등록을 실패하였습니다.");
-    }
-  };
-
-  const imgHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const imgArr = event.target.files;
-
-    if (!imgArr || imgArr.length === 0) return;
-    if (imgArr.length > 1) return alert("1개의 이미지만 업로드 가능합니다.");
-
-    const fileList: File[] = Array.from(imgArr);
-    const [name, type] = [fileList[0].name, fileList[0].type];
-    const url: string = await getSignedURL(name, type);
-    setImgFile(fileList);
-    setSignedUrl(url);
-  };
+const ImgPage = async () => {
+  const imgList: ImgListProps[] = await getImgList();
 
   return (
     <div className={S.imgWrapper}>
-      <div className={S.imgOpt}>
-        {imgFile ? (
-          <Image
-            src={URL.createObjectURL(imgFile[0])}
-            width={400}
-            height={500}
-            alt="업로드 이미지"
-          />
-        ) : (
-          <div>
-            <label htmlFor="imgUp">
-              <p>이미지 업로드</p>
-              <input
-                id="imgUp"
-                type="file"
-                hidden
-                onChange={imgHandler}
-                accept=".jpg,.png"
-              />
-            </label>
-          </div>
-        )}
-      </div>
-      <div className={S.btnWrap}>
-        <button onClick={postImg} disabled={!!!imgFile}>
-          등록하기
-        </button>
-        <button onClick={() => setImgFile(null)} disabled={!!!imgFile}>
-          이미지삭제
-        </button>
-      </div>
+      <ImgUpLoad />
+      <ImgList imgList={imgList} />
     </div>
   );
 };

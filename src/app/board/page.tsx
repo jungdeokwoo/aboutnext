@@ -18,20 +18,18 @@ export default async function Board() {
 
   const deleteHandler = async (formData: FormData) => {
     "use server";
-    console.log(process.env.BASE_URL, "<<URL");
+
     const response = await fetch(`${process.env.BASE_URL}/api/board`, {
       method: "DELETE",
       body: JSON.stringify({ _id: formData.get("listId") }),
       cache: "no-cache",
     });
     const result = await response.json();
-    console.log(result, "delete");
     revalidateTag("list");
   };
 
   const createHandler = async (formData: FormData) => {
     "use server";
-    console.log(formData, "<????");
     const response = await fetch(`${process.env.BASE_URL}/api/board`, {
       method: "POST",
       body: JSON.stringify({
@@ -43,7 +41,6 @@ export default async function Board() {
       cache: "no-cache",
     });
     const result = await response.json();
-    console.log(result, "create");
     revalidateTag("list");
   };
 
