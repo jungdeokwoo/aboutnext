@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import S from "./styles.module.scss";
 import ImgList from "@/components/Board/ImgList";
 import ImgUpLoad from "@/components/Board/ImgUpLoad";
 import { ImgListProps } from "@/types/Board/type";
+import LoadingCircle from "@/components/LoadingCircle";
 
 const getImgList = async () => {
   const response = await fetch(`${process.env.BASE_URL}/api/board/img/url`, {
@@ -18,8 +19,10 @@ const ImgPage = async () => {
 
   return (
     <div className={S.imgWrapper}>
-      <ImgUpLoad />
-      <ImgList imgList={imgList} />
+      <Suspense fallback={<LoadingCircle />}>
+        <ImgUpLoad />
+        <ImgList imgList={imgList} />
+      </Suspense>
     </div>
   );
 };
