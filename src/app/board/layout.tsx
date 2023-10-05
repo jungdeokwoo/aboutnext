@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import S from "./styles.module.scss";
 import Link from "next/link";
 import LoadingCircle from "@/components/LoadingCircle";
@@ -41,7 +41,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         </p>
         <p>갱신된 데이터를 받아올 수 있었습니다.</p>
       </div>
-      <Suspense fallback={<LoadingCircle />}>{children}</Suspense>
+      {children}
     </div>
   );
 };

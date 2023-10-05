@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import S from "./styles.module.scss";
 import ImgList from "@/components/Board/ImgList";
 import ImgUpLoad from "@/components/Board/ImgUpLoad";
@@ -19,10 +19,8 @@ const ImgPage = async () => {
 
   return (
     <div className={S.imgWrapper}>
-      <Suspense fallback={<LoadingCircle />}>
-        <ImgUpLoad />
-        <ImgList imgList={imgList} />
-      </Suspense>
+      <ImgUpLoad />
+      <ImgList imgList={imgList} />
     </div>
   );
 };
