@@ -35,7 +35,9 @@ export default function BasicRouting() {
     <div ref={boxRef} className={S.stickyContainer}>
       <div className={S.sticky}>
         <div className={S.slideContainer}>
-          <div className={`${S.slide} ${pageNum === 1 && S.enabled}`}>
+          <div
+            className={`${S.slide} ${pageNum === 1 ? S.enabled : S.disabled}`}
+          >
             <div className={S.slideBigText}>
               <p>안녕하세요.</p>
             </div>
@@ -43,19 +45,25 @@ export default function BasicRouting() {
           <div className={S.scdown}>
             <div className={S.scdownText}>아래로 스크롤하세요.</div>
           </div>
-          <div className={`${S.slide} ${pageNum === 2 && S.enabled}`}>
+          <div
+            className={`${S.slide} ${pageNum === 2 ? S.enabled : S.disabled}`}
+          >
             <div className={S.slideBigText}>
               <p>처음 뵙겠습니다.</p>
             </div>
           </div>
-          <div className={`${S.slide} ${S.Sl3} ${pageNum === 3 && S.enabled}`}>
+          <div
+            className={`${S.slide} ${S.Sl3} ${
+              pageNum === 3 ? S.enabled : S.disabled
+            }`}
+          >
             <div className={S.slideBigText}>
               <p>지금 보고계신 페이지는</p> <p>테스트중인 페이지입니다</p>
             </div>
           </div>
           <div
             className={`${S.slide} ${S.slideLeft} ${S.sl4} ${
-              pageNum === 4 && S.enabled
+              pageNum === 4 ? S.enabled : S.disabled
             }`}
           >
             <div className={S.sl4Content}>
@@ -70,7 +78,7 @@ export default function BasicRouting() {
           {/* <div className={S.wave}>뭔가 독립적으로 움직이는 배경</div> */}
           <div
             className={`${S.slide} ${S.slideLeft} ${S.sl5} ${
-              pageNum === 5 && S.enabled
+              pageNum === 5 ? S.enabled : S.disabled
             }`}
           >
             <div className={S.slideBigText}>
@@ -78,7 +86,7 @@ export default function BasicRouting() {
               <p>하루를 응원합니다.</p>
             </div>
             <div className={S.goSurfWrapper}>
-              <a>ㅎㅎㅎㅎㅎㅎ</a>
+              <a href="/">메인페이지로 돌아가기</a>
             </div>
           </div>
         </div>
