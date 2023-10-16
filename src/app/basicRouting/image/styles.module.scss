@@ -1,0 +1,30 @@
+.mainContent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200vh;
+  gap: 10px;
+}
+
+.imgWrapper {
+  position: relative;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.scanDiv {
+  position: absolute;
+  background-color: grey;
+  opacity: 0.2;
+  border: 2px solid black;
+  transform: translate(-50%, -50%);
+}
+
+.thumbNail {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  background-color: green;
+  background-repeat: "no-repeat";
+  background-size: 200% 200%;
+}
